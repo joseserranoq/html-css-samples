@@ -1,0 +1,52 @@
+#contenido
+{
+    border: 5px solid red;
+    overflow: scroll;
+    width: 400px;
+    height: 300px;
+    margin: 50px;
+}
+body
+{
+    font-size: 1.5em;
+}
+
+#contenido div
+{
+    background-color: rgba(210, 105, 30, 0.178);
+    border: 5px ridge chocolate;
+    margin: 10px;
+}
+
+#contenido div:nth-child(1)
+{
+    position: static;
+    top: 100px;
+}
+
+#contenido div:nth-child(2)
+{
+    position: relative;
+    left: 100px;
+    top: 100px;
+    height: 200px;
+    width: 200px;
+}
+
+#contenido div:nth-child(3)
+{
+    position: fixed;
+    top: 80%;
+    left: 80%;
+    bottom:0px;
+    right: 0px;
+}
+
+#contenido div:nth-child(4)
+{
+    position: absolute;
+    left: 500px;
+    top: 100px;
+    height: 900px;
+    width: 500px;
+}

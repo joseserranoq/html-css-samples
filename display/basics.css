@@ -1,0 +1,23 @@
+#none .sub-contenido div
+{
+    border: 5px solid rgb(149, 149, 255);
+    margin: 10px;
+    padding: 10px;
+    display: block;
+}
+
+#inline .sub-contenido div
+{
+    border: 5px solid rgb(149, 149, 255);
+    margin: 10px;
+    padding: 10px;
+    display: inline;
+}
+
+#block .sub-contenido div
+{
+    border: 5px solid rgb(149, 149, 255);
+    margin: 10px;
+    padding: 10px;
+    display: block;
+}

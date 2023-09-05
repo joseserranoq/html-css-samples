@@ -1,0 +1,14 @@
+:root {
+    --planeta: 0px 0px;
+    --arco-iris: -40px -38px;
+    --smile: -114px -76px;
+    --zip-file: -40px -0px;
+  }
+
+#sprite
+{
+    height: 40px;
+    width: 40px;
+    border: 1px solid gray;
+    background: url('sprite.jpg') var(--zip-file);
+}

@@ -1,0 +1,54 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+    background-color: rgb(83, 82, 82);
+    color: #000000;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+.btn
+{
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 0.5em 1em;
+    color: red;
+    background-color: lightgrey;
+    border: 10px solid red;
+    border-radius: 5px;
+
+    /*
+    transition-property: transform;  transition-property: la propiedad que se esta aplicando
+    transition-duration: 0.3s;
+    transition-timing-function: ease; la curva de aceleracion de la trasicion 
+    transition-delay: 0s;  tiempo de espera antes de que se aplique la transicion  
+    */
+    /*
+    transition: transform 0.3s, background-color 0.3s,color 0.3s;  es lo mismo que realizar el ejemplo de arrriba 
+    */
+    /* transition: all 10s; para que todo el boton realice la animacion y no por separado */
+}
+
+.btn:hover {
+    transform: scale(1.5);
+    background-color: red;
+    color: white;
+}
+
+.btn:active {
+    transform: scale(2);
+    background-color: lightgreen;
+    border-color: lightgreen;
+    color: white;
+
+}
+.btn:active::before{
+    content: "";
+    box-shadow: 0 0 10px 10px lightgreen;
+}
+
+.btn:active::after{
+    content: "";
+    box-shadow: 0 0
+     10px 10px red;
+}

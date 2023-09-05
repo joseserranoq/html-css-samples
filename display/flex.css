@@ -1,0 +1,39 @@
+#contenido
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#contenido div
+{
+    border: 5px solid rgb(149, 149, 255);
+    margin: 10px;
+    height: 100px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+    flex-direction: column;
+}
+#contenido div:nth-child(1)
+{
+    background-color: rgba(21, 255, 0, 0.1);
+}
+#contenido div:nth-child(2)
+{
+    background-color: rgba(21, 255, 0, 0.3);
+}
+#contenido div:nth-child(3)
+{
+    background-color: rgba(21, 255, 0, 0.5);
+}
+#contenido div:nth-child(4)
+{
+    background-color: rgba(21, 255, 0, 0.7);
+}
+#contenido div:nth-child(5)
+{
+    background-color: rgba(21, 255, 0, 0.9);
+}

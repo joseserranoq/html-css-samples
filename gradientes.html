@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #contenido
+        {
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            height: 200px;
+            width: 400px;
+            padding: 20px;
+            border: 5px solid cadetblue;
+            /*linear-gradient(direction, color1, color2, ...);*/
+            background: linear-gradient(90deg, rgba(0, 0, 255, 0.336) 20%, pink 75%,rgba(0, 0, 255, 0.336));
+            border-radius: 10px;
+            box-shadow: 10px 10px 10px 10px rgba(153, 153, 153, 0.5), 10px 10px 15px black inset;
+        }
+        #contenido:hover
+        {
+            transform: rotate(12deg);
+        }
+        h1:hover
+        {
+            text-shadow: 5px 5px 5px white;
+            transform: rotate(15deg);
+        }
+    </style>
+</head>
+<body>
+    <div id="contenido">
+        <h1>Hola mundo</h1>
+    </div>
+</body>
+</html>

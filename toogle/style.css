@@ -1,0 +1,51 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+.toggle-btn {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+}
+
+.toggle-btn input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 15px;
+  transition: background-color 0.4s, transform 0.4s;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  background-color: white;
+  border-radius: 50%;
+  left: 2px;
+  bottom: 2px;
+  transition: transform 2.4s;
+}
+
+.toggle-btn input:checked + .slider {
+  background-color: #2196F3;
+  transform: translateX(30px);
+}
+
+.toggle-btn input:checked + .slider:before {
+  transform: translateX(30px);
+}
