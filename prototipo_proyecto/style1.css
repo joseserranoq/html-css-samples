@@ -1,52 +1,63 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.5rem;
-    background-color: rgb(83, 82, 82);
-    color: #000000;
+    background-color: darkgrey;
+
     line-height: 1.6;
     margin: 0;
     padding: 0;
+    overflow: auto;
+}
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+/*Prototipo-1*/
+button span{
+    color: white;
+    text-shadow: 0px 0px 40px black;
+    font-size: 2rem;
+    font-weight: 700;
+
 }
 .btn
 {
-    font-size: 2rem;
-    font-weight: 700;
-    padding: 0.5em 1em;
-    color: red;
-    background-color: lightgrey;
-    border: 10px solid red;
-    border-radius: 5px;
+    padding: 10px 20px;
+    background-color: lightslategrey;
+    border: 10px solid black;
+    border-radius: 40px;
+    box-shadow: 0px 0px 10px black;
 
-    /*
-    transition-property: transform;  transition-property: la propiedad que se esta aplicando
-    transition-duration: 0.3s;
-    transition-timing-function: ease; la curva de aceleracion de la trasicion 
-    transition-delay: 0s;  tiempo de espera antes de que se aplique la transicion  
-    */
-    /*
-    transition: transform 0.3s, background-color 0.3s,color 0.3s;  es lo mismo que realizar el ejemplo de arrriba 
-    */
-    /* transition: all 10s; para que todo el boton realice la animacion y no por separado */
 }
 
 .btn:hover {
-    transform: scale(1.5);
-    background-color: red;
+    animation: rotar 4s 0s linear infinite;
+    background-color: grey;
     color: white;
+    box-shadow: 0px 0px 5px lightgreen,
+                0px 0px 10px rgb(120, 240, 120),
+                0px 0px 20px rgb(83, 222, 83),
+                0px 0px 40px rgb(59, 243, 59),
+                0px 0px 80px rgb(23, 233, 23);
+
 }
 
 .btn:active {
     transform: scale(2);
     background-color: lightgreen;
     border-color: lightgreen;
-    color: white;
-    animation: rotar 3s 0s linear infinite;
+    box-shadow: 0px 0px 10px black;
+    animation: rebota 3s 0s linear infinite;
 }
 
-.btn::before,
+/* .btn::before,
 .btn::after{
-    filter: blur(5rem);
-}
+    content: "";
+} */
 
 
 /* Animaciones */
@@ -54,22 +65,53 @@ body {
     0%{
         transform: rotate(0deg);
     }
-    50%{
-        transform: rotate(360deg);
-    }
     100%{
-        transform: rotate(0deg);
+        transform: rotate(360deg);
     }
 }
 
 @keyframes rebota{
     0%,20%,50%,80%,100%{
-        transform: translateY(0px);
+        transform: scale(1);
     }
     40%{
-        transform: translateY(-30px);
+        transform: scale(0.5);
     }
     60%{
-        transform: translateY(-15px);
+        transform: scale(2);
     }
+}
+
+/*Prototipo-2  */
+.slider-w{
+    position: relative;
+    max-width: 48rem;
+    
+}
+.slider{
+    display: flex;
+    aspect-ratio: 16/9;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    box-shadow: 0 0.3rem 0.5rem 0.1rem black; /* offset x y blur spread */
+    border-radius: 1rem;
+}
+.slider img{
+     flex: 5 0 100%; /*flex-growth flex shrink flex basis */
+}
+.slider-nav{
+    display: flex;
+    column-gap: 1rem;
+    position: absolute;
+    bottom: 1.25rem;    /*1.25rem = 20px */
+    left: 50%;
+}
+.slider-nav a{
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: white;
+}
+.slider-nav a:hover{
+    background-color: black;
 }
