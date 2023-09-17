@@ -1,13 +1,16 @@
+:root{
+    --monedaCara: url(coin/moneda_cara2.png);
+    --monedaAtras: url(coin/moneda_atras.png);
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.5rem;
     background-color: darkgrey;
-
     line-height: 1.6;
-    margin: 0;
-    padding: 0;
     overflow: auto;
 }
+
 section {
     display: flex;
     flex-direction: column;
@@ -16,52 +19,83 @@ section {
     height: 100vh;
     overflow: hidden;
   }
+
 /*Prototipo-1
 Se quiere que se utilice un hover como efecto donde cambie la forma y que parezca una moneda girando
 */
 button span{
+
     color: white;
-    text-shadow: 0px 0px 40px black;
     font-size: 2rem;
     font-weight: 700;
-
 }
+
 .btn
 {
-    padding: 10px 20px;
-    background-color: lightslategrey;
-    border: 10px solid black;
-    border-radius: 40px;
-    box-shadow: 0px 0px 10px black;
+    background-position: center;
+    background-image: var(--monedaCara);
+    background-size: 100% 100%;
+    height: 12rem;
+    width: 12rem;
+    
+    border-radius: 50%;
+    transform-style: preserve-3d;
+    position: relative;
 
+    &::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        border-radius: 50%;
+        background-image: var(--monedaAtras);
+        background-size: 100% 100%;
+        background-position: center;
+        transform: translateZ(-0.75rem);
+    }
+
+    &::after{
+        content: "";
+        background-color: goldenrod;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        height: 12rem;
+        width: 0.75rem;
+        z-index: -10;
+        transform: rotateY(-90deg);
+        transform-origin: 100% 50%;
+    }
 }
 
 .btn:hover {
-    animation: rotar 4s 0s linear infinite;
-    background-color: grey;
-    color: white;
-    box-shadow: 0px 0px 5px lightgreen,
+    
+    background-color: goldenrod;
+    animation: gira 4s 0s linear infinite;
+ 
+    /* box-shadow: 0px 0px 5px lightgreen,
                 0px 0px 10px rgb(120, 240, 120),
                 0px 0px 20px rgb(83, 222, 83),
                 0px 0px 40px rgb(59, 243, 59),
-                0px 0px 80px rgb(23, 233, 23);
+                0px 0px 80px rgb(23, 233, 23); 
+                */
 
-}
+
+    
+
+} 
 
 .btn:active {
-    transform: scale(2);
-    background-color: lightgreen;
-    border-color: lightgreen;
-    box-shadow: 0px 0px 10px black;
-    animation: rebota 3s 0s linear infinite;
+    animation: cae 1s 0s ease-out 1;
     /*
     animation-name: rebota;
     animation-duration: 3s;
     animation-delay: 0s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-    */
-
+   */
 }
 
 /* .btn::before,
@@ -74,6 +108,8 @@ button span{
 El slide puede ser cambiado de imagen mediante un div en la esquina donde se pueda cambiar de imagen, haciendo 
 alusi[on a una p[agina de un cuaderno
 */
+
+
 @keyframes rotar{
     0%{
         transform: rotate(0deg);
@@ -95,12 +131,31 @@ alusi[on a una p[agina de un cuaderno
     }
 }
 
+@keyframes gira{
+0%{transform: rotateY(0deg);}
+100%{transform: rotateY(360deg);} 
+}
+
+@keyframes cae{
+    0%{transform: rotateX(0deg) ;}
+    50%{transform: rotateX(90deg);}
+    60%,80%{transform: rotateX(110deg);}
+    70%,90%{transform: rotateX(70deg);}
+    100%{transform: rotateX(90deg);}
+    /* 0%{transform: rotateX(0deg) ;}
+    100%{transform: rotateX(90deg);} */
+}
+@keyframes sacude{
+    0%{transform: rotate(30deg) ;}
+    100%{transform: rotate(-30deg);}
+}
+
 /*Prototipo-2  */
 .slider-w{
     position: relative;
-    max-width: 48rem;
-    
+    max-width: 48rem;    
 }
+
 .slider{
     display: flex;
     aspect-ratio: 16/9;
@@ -109,22 +164,46 @@ alusi[on a una p[agina de un cuaderno
     box-shadow: 0 0.3rem 0.5rem 0.1rem black; /* offset x y blur spread */
     border-radius: 1rem;
 }
+/* funciona para ajustar la imagen al cuadro del slider */
 .slider img{
-     flex: 5 0 100%; /*flex-growth flex shrink flex basis */
+    flex: 5 0 100%; /*flex-growth flex shrink flex basis */
 }
+
 .slider-nav{
-    display: flex;
-    column-gap: 1rem;
     position: absolute;
-    bottom: 1.25rem;    /*1.25rem = 20px */
-    left: 50%;
+    top: 3.5rem;    /*1.25rem = 20px */
+    right: 0rem;
 }
-.slider-nav a{
-    width: 0.5rem;
-    height: 0.5rem;
-    border-radius: 50%;
-    background-color: white;
+
+#img1,#img2,#img3{
+    border-radius: 10%;
+    background-size: cover;
+    transition: width 0.5s ease;
+    width: 1rem;
+    height: 4rem;
 }
-.slider-nav a:hover{
-    background-color: black;
+
+#img1{
+    background-image: url('img/1.jpg');
+    position: absolute;
+    right: 0rem;
+    top: 0.5rem;
+}
+
+#img2{
+    background-image: url('img/2.jpg');
+    position: absolute;
+    right: 0rem;
+    top: 8.5rem;
+}
+
+#img3{
+    background-image: url('img/3.jpg');
+    position: absolute;
+    right: 0rem;
+    top: 16.5rem;
+
+}
+.slider-nav #img1:hover,#img2:hover,#img3:hover{
+    width: 5rem;
 }
