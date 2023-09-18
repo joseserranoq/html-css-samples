@@ -2,7 +2,6 @@
     --monedaCara: url(coin/moneda_cara2.png);
     --monedaAtras: url(coin/moneda_atras.png);
 }
-
 body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.5rem;
@@ -56,7 +55,7 @@ button span{
         transform: translateZ(-0.75rem);
     }
 
-    &::after{
+    /* &::after{
         content: "";
         background-color: goldenrod;
         position: absolute;
@@ -67,13 +66,13 @@ button span{
         z-index: -10;
         transform: rotateY(-90deg);
         transform-origin: 100% 50%;
-    }
+    } */
 }
 
 .btn:hover {
     
     background-color: goldenrod;
-    animation: gira 4s 0s linear infinite;
+    animation: gira 1s 0s linear infinite;
  
     /* box-shadow: 0px 0px 5px lightgreen,
                 0px 0px 10px rgb(120, 240, 120),
@@ -149,7 +148,6 @@ alusi[on a una p[agina de un cuaderno
     0%{transform: rotate(30deg) ;}
     100%{transform: rotate(-30deg);}
 }
-
 /*Prototipo-2  */
 .slider-w{
     position: relative;
@@ -170,12 +168,18 @@ alusi[on a una p[agina de un cuaderno
 }
 
 .slider-nav{
+    height: 20rem;
+    width: 6rem;
     position: absolute;
-    top: 3.5rem;    /*1.25rem = 20px */
+    top: 3.8rem;    /*1.25rem = 20px */
     right: 0rem;
+    overflow: scroll;
 }
-
-#img1,#img2,#img3{
+.slider-nav::-webkit-scrollbar{
+    width: 0rem;
+    background-color: transparent;
+}
+#img1,#img2,#img3,#img4,#img5{
     border-radius: 10%;
     background-size: cover;
     transition: width 0.5s ease;
@@ -187,23 +191,37 @@ alusi[on a una p[agina de un cuaderno
     background-image: url('img/1.jpg');
     position: absolute;
     right: 0rem;
-    top: 0.5rem;
+    top: 0rem;
 }
 
 #img2{
     background-image: url('img/2.jpg');
     position: absolute;
     right: 0rem;
-    top: 8.5rem;
+    top: 7rem;
 }
 
 #img3{
     background-image: url('img/3.jpg');
     position: absolute;
     right: 0rem;
-    top: 16.5rem;
+    top: 14rem;
 
 }
-.slider-nav #img1:hover,#img2:hover,#img3:hover{
+#img4{
+    background-image: url('img/4.jpg');
+    position: absolute;
+    right: 0rem;
+    top: 21rem;
+
+}
+#img5{
+    background-image: url('img/5.jpg');
+    position: absolute;
+    right: 0rem;
+    top: 28rem;
+
+}
+.slider-nav #img1:hover,#img2:hover,#img3:hover,#img4:hover,#img5:hover{
     width: 5rem;
 }
